@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Pelayo A2P1</title>
+</head>
+
+<body>
+
+    <h1>Patrick Pelayo A2P1</h1>
+
+    <script>
+        //Functions
+        //This function acts as a main(note it wraps a setTimeout, as I wanted to ensure the dom loaded first)
+        (function() {
+            setTimeout(function() {
+                //variables
+                var fName; //First name of user
+
+                //get the user first name
+                fName = get_f_name();
+
+                //Now get the GPA and tell user the grade
+                getProcG(fName);
+            }, 1000);
+
+
+        })()
+
+
+        //This function gets the first name and returns it
+        function get_f_name() {
+            //variables
+            var fName, //User First Name
+                regEx = /[^A-Z]/i, //Ensure input only works for A-Z regardless of case NOTE: attempted [^A-z] but it allowed ` and                                                                             //^ as input            
+                regEx2 = /\s/, //to check for whitespace
+                prmt = "Please enter your first name.", //The name prompt
+                prmtE = "Invalid input,\nPlease enter your first name.", //String for invalid input            
+                flag; //Flag for the do while loop
+
+
+            //input validate letters only/ don't allow last name
+            do {
+
+                //set flag false
+                flag = false;
+
+                //prompt for the user first name
+                fName = prompt(prmt);
+
+                //trim the string of white space if present
+                fName = fName.trim();
+
+                //If user entered more than one name, take only first name
+                if (regEx2.test(fName)) {
+                    alert("You entered a last name as well, this was removed.");
+                    fName = fName.split(" ", 1);
+                }
+
+                //now check for decimals which are not valid in a 
+                //name, if present set flag true, and change prompt
+                if (regEx.test(fName)) {
+                    flag = true;
+                    prmt = prmtE;
+                }
+
+                //check for no input
+                if (fName === "") {
+                    flag = true;
+                    prmt = prmtE;
+                }
+
+
+            } while (flag === true)
+
+            //return the first name
+            return fName;
+
+        }
+
+        //this function displays the user's first name, then gets the current GPA, then outputs XXXX, your GPA of X.XX results in a // X grade.
+        function getProcG(fName) {
+            //Structs,objects
+            var Grades = {
+                A: 4.0,
+                B: 3.0,
+                C: 2.0,
+                D: 1.0,
+                F: 0.0
+            };
+
+            //variables
+            var gpa, //User entered GPA
+                prmpt = "Please enter your GPA, " + fName, //Prompts "Please enter your GPA, XXXX
+                gpaE = "That inut is not valid, enter only a GPA from 0.0-4.0\n Please enter your GPA, " + fName;
+
+
+            //prompt user
+            gpa = prompt(prmpt);
+
+
+            //input validate, accept only 0-4 GPA
+            while (!(gpa >= 0.0 && gpa <= Grades.A))
+                gpa = prompt(gpaE);
+
+            //convert to floating point(needed for toFixed())
+            gpa = parseFloat(gpa);
+
+            //Build the header(document.write clears the dom body)
+            document.write("<h1>Patrick Pelayo A2P1</h1>");
+
+            //output the name,GPA,Grade message
+            if (gpa == Grades.A)
+                document.write("<p>" + fName + ", your GPA of " + gpa.toFixed(2) + " results in an A grade.</p>");
+            else {
+                if (gpa < Grades.A && gpa >= Grades.B)
+                    document.write("<p>" + fName + ", your GPA of " + gpa.toFixed(2) + " results in a B grade.</p>");
+
+                else {
+                    if (gpa < Grades.B && gpa >= Grades.C)
+                        document.write("<p>" + fName + ", your GPA of " + gpa.toFixed(2) + " results in a C grade.</p>");
+                    else {
+                        if (gpa < Grades.C && gpa >= Grades.D)
+                            document.write("<p>" + fName + ", your GPA of " + gpa.toFixed(2) + " results in a D grade.</p>");
+                        else {
+                            if (gpa < Grades.D)
+                                document.write("<p>" + fName + ", your GPA of " + gpa.toFixed(2) + " results in a F grade.</p>");
+                        }
+                    }
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+.mainBody {
+
+    margin: 0 auto;
+    width: 1000px;
+    height: auto;
+    background-color: beige;
+
+
+}
+
+header {
+    width: 100%;
+    height: 100px;
+
+
+}
+
+.headerFooterImg {
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    width: 150px;
+    height: auto;
+
+    float: left;
+}
+
+.mainContentBox {
+    width: 70%;
+    height: auto;
+
+    float: left;
+    text-align: center;
+
+}
+
+
+
+.rightSideBar {
+    width: 150px;
+    height: auto;
+    float: right;
+    text-align: right;
+
+}
+
+
+footer {
+    height: 100px;
+    width: 100%;
+
+    clear: both;
+}

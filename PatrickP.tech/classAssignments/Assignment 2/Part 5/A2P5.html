@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>A2P5 by YOUR NAME HERE</title>
+
+    <script>
+        //This function outputs the receipt
+        function receiptO(Customer,products, prodPrice, taxRate){
+            //variables
+            var temp,
+                outPut;
+            
+            
+            //Output string
+                outPut = Customer.item[0] + " " + products[0] + "s " + " and " + Customer.item[1] + " " + products[1] + "s were ordered by " + Customer.name + "!";
+
+                /* Forced to create a new element as write will overwrite the current page of its html */
+                //Output the h2
+                temp = document.createElement("h2");
+                temp.innerHTML = outPut;
+                document.getElementsByTagName("body")[0].appendChild(temp);
+
+                //Output string
+                outPut = Customer.item[0] + " " + products[0] + "s @ $" + prodPrice[0].toFixed(2) + " each... $" + Customer.itemTtl[0].toFixed(2);
+
+                //output the three totals as <h3> appended
+                temp = document.createElement("h3");
+                temp.innerHTML = outPut;
+                document.getElementsByTagName("body")[0].appendChild(temp);
+
+                //Output string
+                outPut = Customer.item[1] + " " + products[1] + "s @ $" + prodPrice[1].toFixed(2) + " each... $" + Customer.itemTtl[1].toFixed(2);
+
+                //2nd h3
+                temp = document.createElement("h3");
+                temp.innerHTML = outPut;
+                document.getElementsByTagName("body")[0].appendChild(temp);
+
+                //Output string
+                outPut = "Subtotal for order... $" + Customer.subTtl.toFixed(2);
+
+                //3rd h3
+                temp = document.createElement("h3");
+                temp.innerHTML = outPut;
+                document.getElementsByTagName("body")[0].appendChild(temp);
+
+                //Display tax h3
+
+
+                //Output string
+                outPut = "Tax for order... $" + (Customer.subTtl * taxRate).toFixed(2);
+
+                //3rd h3
+                temp = document.createElement("h3");
+                temp.innerHTML = outPut;
+                document.getElementsByTagName("body")[0].appendChild(temp);
+
+                //Grand total with tax
+
+
+                //Output string
+                outPut = "Total for order... $" + (Customer.subTtl * taxRate + Customer.subTtl).toFixed(2);
+
+                //3rd h3
+                temp = document.createElement("h3");
+                temp.innerHTML = outPut;
+                document.getElementsByTagName("body")[0].appendChild(temp);
+            
+            
+            
+        }
+            
+    </script>
+
+
+
+</head>
+
+<body>
+    <h1>A2P5 STORE NAME GOES HERE</h1>
+    <p>STORE INTRODUCTION GOES HERE</p>
+    <p>This months specials:</p>
+    <table border="1" cellspacing="0" cellpadding="6" summary="Table of product images and prices and descriptions">
+        <tbody>
+            <tr>
+                <td>PRODUCT IMAGE #1 GOES HERE</td>
+                <td>
+                    <p style="font-weight: bold">PRICE AND PRODUCT NAME #1 GOES HERE </p>
+                    <p>PRODUCT #1 DESCRIPTION GOES HERE </p>
+                </td>
+            </tr>
+            <tr>
+                <td>PRODUCT IMAGE #2 GOES HERE</td>
+                <td>
+                    <p style="font-weight: bold">PRICE AND PRODUCT NAME #2 GOES HERE </p>
+                    <p>PRODUCT #2 DESCRIPTION GOES HERE </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //Functions
+        //This acts as a main for web page
+        (function() {
+
+            //structs,significant objects
+            var Customer = {
+                name: 0, //Customer's name
+                item: [], //# of items ordered
+                itemTtl: [], //Cost per item, || array with Item []
+                subTtl: 0 //Customer subtotal spent
+            };
+
+            //variables
+            var products = ["Anti-Vampire Stake", "nail-clipper"],
+                prodPrice = [100.50, 1.75], //|| array for the products
+                taxRate   = 0.08; 
+        
+
+            //update the page
+            updateP(prodPrice);
+
+            //wait a second for page to load then process the requests
+            setTimeout(function() {
+
+                //Prompt user for their name
+                getN(Customer);
+
+                //Order purchase
+                buy(Customer, products);
+
+                //Process the costs
+                calcTtl(Customer, prodPrice);                
+
+                //This function outputs the receipt
+                receiptO(Customer, products, prodPrice, taxRate);
+
+            }, 1000);
+
+
+
+
+        })()
+
+        //This function processes the cost of the item and stores it into the customer object
+        function calcTtl(Customer, prodPrice) {
+            //variables
+
+            //calculate the ttls of each item
+            for (var i = 0; i < prodPrice.length; i++) {
+                Customer.itemTtl[i] = prodPrice[i] * Customer.item[i];
+                Customer.subTtl += Customer.itemTtl[i];
+
+            }
+
+        }
+
+        //This function will change the HTML to the store one<updates page>. Where is the fun changing HTML directly?
+        function updateP(prodPrice) {
+            //variables
+            var strN = "A2P5 Patrick's Vampire hunter accessories, and supplies.",
+                strIn = "Welcome to my vampire hunter store, presented below are two critical vampire hunting tools.",
+                prd1D = "This is a perfect weapon for defeating vampires, just position over their heart and jam it in, then poof            no more vampire. <br> (Hammer not included)",
+                prd1P = "$" + prodPrice[0] +  " Anti-Vampire Stake(do not eat)",
+                prd2D = "You may wonder what good nail clippers may do against a vampire ,but have you seen the claws on the nosferatu. If threatened by one like Count Orlok just flash your clippers and the fear the vampire will have of having his fabolous nails cut will send him flying away.",
+                prd2P = "$" + prodPrice[1] +" nail-clipper",
+                title = "A2P4 by Patrick Pelayo",
+                width = "300",
+                height = "150",
+                temp;
+
+            //set background beige
+            document.getElementsByTagName("body")[0].style.background = "beige";
+
+            //change all the html thru javascript
+            document.getElementsByTagName("h1")[0].innerHTML = strN;
+            document.getElementsByTagName("p")[0].innerHTML = strIn;
+            document.getElementsByTagName("p")[2].innerHTML = prd1P;
+            document.getElementsByTagName("p")[3].innerHTML = prd1D;
+            document.getElementsByTagName("p")[4].innerHTML = prd2P;
+            document.getElementsByTagName("p")[5].innerHTML = prd2D;
+            document.getElementsByTagName("title")[0].innerHTML = title;
+
+            //do the images
+            temp = document.createElement("IMG");
+            temp.src = "stake.jpg";
+            temp.width = width;
+            temp.height = height;
+            document.getElementsByTagName("td")[0].innerHTML = "";
+            document.getElementsByTagName("td")[0].appendChild(temp);
+
+            //second image
+            temp = document.createElement("IMG");
+            temp.src = "nailClipper.png";
+            temp.width = width;
+            temp.height = height;
+            document.getElementsByTagName("td")[2].innerHTML = "";
+            document.getElementsByTagName("td")[2].appendChild(temp);
+
+
+        }
+
+        //this function gets a customer object, and gets the user name
+        function getN(Customer) {
+            //variables
+            var regEx1 = /[^A-Z ]/i, //Ensure only letters inputed for a name
+                prmptMsg = "Welcome to Patrick's vampire hunter accessories, and supplies. What is your name?",
+                prmptEr = "Name's cannot contain numbers or symbols, please re-enter your name.",
+                prmptEr2 = "You must enter a name",
+                aSpace = " ", //Simply a space for validation
+                defaultN = "Van Hellsing"; //default name
+
+            //prompt for the name of the user,perform input validation
+            Customer.name = prompt(prmptMsg, defaultN);
+
+            //trim any white space
+            Customer.name.trim();
+
+            //check for invalid input
+            while (regEx1.test(Customer.name) || (Customer.name[0] === aSpace)) {
+
+                if (Customer.name[0] === aSpace)
+                    Customer.name = prompt(prmptEr2, defaultN);
+
+                else
+                    Customer.name = prompt(prmptEr, defaultN);
+
+                //trim any white space
+                Customer.name.trim();
+
+            }
+
+
+        }
+
+        //This function gets the # of desired items for each item type
+        function buy(Customer, prod) {
+            //variables         
+            var error = "That is not valid input, you must enter a number.\n";
+
+            //get the # of orders for the customer
+            for (var i = 0; i < prod.length; i++) {
+
+                //prompt
+                Customer.item[i] = prompt(Customer.name + " how many " + prod[i] + "s would you like to purchase?");
+
+                //trim the string
+                Customer.item[i] = Customer.item[i].trim();
+
+                //input validate
+                while (Customer.item[i] < 0 || !(Customer.item[i] >= 0) || (Customer.item[i]).length === 0) {
+                    Customer.item[i] = prompt(error + Customer.name + " how many " + prod[i] + "s would you like to purchase?");
+
+                    //trim the string
+                    Customer.item[i] = Customer.item[i].trim();
+
+                }
+
+
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

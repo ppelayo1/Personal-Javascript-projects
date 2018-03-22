@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Patrick Pelayo's A1P4 Temperature Converter</title>
+</head>
+
+<body style="background-color: lightblue">
+
+    <h1>A1P4 Temperature Converter</h1>
+
+    <button onclick="convertC2F()">Click to begin conversion</button>
+
+
+
+    <script>
+        function convertC2F() {
+            var clicked = prompt('Enter celsius temperature to convert into fer.'),
+                repeat = true; //Flag for input validation do while loop
+            //will repeat every time a value is not acceptable
+            do {
+
+
+                //Do the conversion
+                if (!(Number.isNaN(parseFloat(clicked)))) {
+
+                    //don't perform a loop
+                    repeat = false;
+
+                    //convert string into float (if not the conversion clicked * (9/5) + 32 gives NAN when input "5 k" letters //after number breaks the conversion in below expression)
+                    clicked = parseFloat(clicked);
+                    
+                    
+                    //redraw the background
+                    document.write('<h1>A1P3 Temperature Converter</h1>');
+                    document.write('<p>The formula used in this conversion is F = C × 9/5 + 32</p>');
+                    document.body.style.background = "lightblue";
+
+
+                    if (clicked > 32) {
+                        window.alert(clicked + ' in celcius is ' + (clicked * (9 / 5) + 32) + ' in Feren.');
+                    } else
+                        window.alert(clicked + ' in celcius is ' + (clicked * (9 / 5) + 32) + ' in Feren and that is freezing cold!');
+
+
+
+
+                    //Input validate when conversion is not acceptable
+                } else {
+                    if (clicked.trim() != "") {
+
+                        clicked = prompt("That is not a number.\nEnter celsius temperature to convert into fer. ");
+                    } else {
+
+                        clicked = prompt("No value was entered.\nEnter celsius temperature to convert into fer. ");
+                    }
+
+
+                }
+
+            } while (repeat === true)
+
+        }
+    </script>
+
+</body>
+
+</html>

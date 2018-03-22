@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>A3P1 by Patrick Pelayo</title>
+    
+    <script>
+        //Constants
+        const prodPrice = [6,7];
+        
+    </script>
+    
+</head>
+
+<body>
+    <h1>A3P1 STORE NAME GOES HERE</h1>
+    <p>STORE INTRODUCTION GOES HERE</p>
+    <p>This months specials:</p>
+    <form>
+        <table border="1" cellspacing="0" cellpadding="6" summary="Table of product images, prices & descriptions">
+            <tbody>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>Please enter your name:<br><input type="text" id="txtName" name="txtName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>PRODUCT IMAGE #1 GOES HERE</td>
+                    <td>
+                        <p style="font-weight: bold">$1 Widgets</p>
+                        <p>PRODUCT #1 DESCRIPTION GOES HERE </p>
+                    </td>
+                    <td>Quantity:<br><input type="text" id="txtQ1" name="txtQ1"></td>
+                </tr>
+                <tr>
+                    <td>PRODUCT IMAGE #2 GOES HERE</td>
+                    <td>
+                        <p style="font-weight: bold">$2 Thingys</p>
+                        <p>PRODUCT #2 DESCRIPTION GOES HERE </p>
+                    </td>
+                    <td>Quantity:<br><input type="text" id="txtQ2" name="txtQ2"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <input type="button" value="Process Order" id="btnProcess" onClick="document.getElementById('receipt').innerHTML = document.getElementById('txtName').value;"
+        </p>
+
+    </form>
+    <div id="receipt">&nbsp;</div>
+
+    <script>      
+        
+        //This function will change the HTML to the store one<updates page>. Taken from previous assignment
+        (function() {
+            //variables
+            var strN = "A5P1 Patrick's Vampire hunter accessories, and supplies.",
+                strIn = "Welcome to my vampire hunter store, presented below are two critical vampire hunting tools.",
+                prd1D = "This is a perfect weapon for defeating vampires, just position over their heart and jam it in, then poof            no more vampire. <br> (Hammer not included)",
+                prd1P = "$" + prodPrice[0] + " Anti-Vampire Stake(do not eat)",
+                prd2D = "You may wonder what good nail clippers may do against a vampire ,but have you seen the claws on the nosferatu. If threatened by one like Count Orlok just flash your clippers and the fear the vampire will have of having his fabolous nails cut will send him flying away.",
+                prd2P = "$" + prodPrice[1] + " nail-clipper",
+                title = "A3P1 by Patrick Pelayo",
+                width = "300",
+                height = "150",
+                temp;
+
+            //set background beige
+            document.getElementsByTagName("body")[0].style.background = "beige";
+
+            //change all the html thru javascript
+            document.getElementsByTagName("h1")[0].innerHTML = strN;
+            document.getElementsByTagName("p")[0].innerHTML = strIn;
+            document.getElementsByTagName("p")[2].innerHTML = prd1P;
+            document.getElementsByTagName("p")[3].innerHTML = prd1D;
+            document.getElementsByTagName("p")[4].innerHTML = prd2P;
+            document.getElementsByTagName("p")[5].innerHTML = prd2D;
+            document.getElementsByTagName("title")[0].innerHTML = title;
+
+            //do the images
+            temp = document.createElement("IMG");
+            temp.src = "stake.jpg";
+            temp.width = width;
+            temp.height = height;
+            document.getElementsByTagName("td")[3].innerHTML = "";
+            document.getElementsByTagName("td")[3].appendChild(temp);
+
+            //second image
+            temp = document.createElement("IMG");
+            temp.src = "nailClipper.png";
+            temp.width = width;
+            temp.height = height;
+            document.getElementsByTagName("td")[6].innerHTML = "";
+            document.getElementsByTagName("td")[6].appendChild(temp);
+
+
+        })();
+
+    </script>
+
+</body>
+
+</html>
