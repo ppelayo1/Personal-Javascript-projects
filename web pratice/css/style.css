@@ -1,57 +1,56 @@
-
-.mainBody{
+.mainBody {
 
     margin: 0 auto;
     width: 1000px;
     height: auto;
-    
+    background-color: beige;
 
 
 }
 
-header{
-   width: 100%;
-   height: 100px;
-   
+header {
+    width: 100%;
+    height: 100px;
+
 
 }
 
-.headerFooterImg{
-  height: 100%;
-  width: 100%;
+.headerFooterImg {
+    height: 100%;
+    width: 100%;
 }
 
-nav{
-  width: 100px;
-  height: auto;
-  
-  float:left;
+nav {
+    width: 100px;
+    height: auto;
+
+    float: left;
 }
 
-.mainContentBox{
-  width: 80%;
-  height: auto;
-  
-  float:left;  
-  text-align:center;
+.mainContentBox {
+    width: 80%;
+    height: auto;
 
-}
+    float: left;
+    text-align: center;
 
-
-
-.rightSideBar{
- width: 100px;
- height: auto;
- 
- float:right;
- text-align: right;
 }
 
 
 
-footer{
- height:100px;
- width: 100%;
- 
-clear:both;
+.rightSideBar {
+    width: 100px;
+    height: auto;
+
+    float: right;
+    text-align: right;
+}
+
+
+
+footer {
+    height: 100px;
+    width: 100%;
+
+    clear: both;
 }
