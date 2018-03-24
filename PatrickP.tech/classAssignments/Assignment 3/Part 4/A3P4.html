@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="utf-8">
-    <title>A3P2 by Patrick Pelayo</title>
+    <title>A3P4 by Patrick Pelayo</title>
 
     <script>
         //Constants
-        const prodPrice = [6, 7];
+        const prodPrice = [12.75, 3.95];
         const keyCodes = {       //These are the keyCodes for input masking
             a: 65,
             z: 90,
@@ -28,8 +28,11 @@
             //variables
             var name = document.getElementById("txtName").value;
             var items = [document.getElementById("txtQ1").value,document.getElementById("txtQ2").value];
+            var tax = 0.08;
             var error = "You did not enter all of the required information.";
-            var output = name + ", thank you for your order of " + items[0] + " Anti-Vampire Stake/s and " + items[1] + " nail clipper/s.";
+            var subTtl = items[0] * prodPrice[0] + items[1] * prodPrice[1];
+            var grndTtl = subTtl + subTtl * tax;
+            var output = name + ", thank you for your order of " + items[0] + " Anti-Vampire Stake/s and " + items[1] + " nail clipper/s.<br>" + items[0] + " Anti-Vampire Stake/s @1 each = $" + (items[0] * prodPrice[0]).toFixed(2) + "<br>" + items[1] + " Nail Clipper\s @1 each = $" + (items[1] * prodPrice[1]).toFixed(2) + "<br>Subtotal: $" + subTtl.toFixed(2) + "<br>Tax $" + (subTtl * tax).toFixed(2) + "<br>Total Balance = $" + grndTtl.toFixed(2);
             
             
             //if any value was left blank deny processing and inform user of the problem
@@ -98,7 +101,7 @@
 </head>
 
 <body>
-    <h1>A3P2 STORE NAME GOES HERE</h1>
+    <h1>A3P1 STORE NAME GOES HERE</h1>
     <p>STORE INTRODUCTION GOES HERE</p>
     <p>This months specials:</p>
     <form>
@@ -130,7 +133,7 @@
         </table>
         <p>
             <p>
-                <input type="button" value="Process Order" id="btnProcess" onClick="processOrder();">
+                <input type="button" value="Process Order" id="btnProcess">
             </p>
 
         </p>
@@ -144,13 +147,13 @@
         //This function will change the HTML to the store one<updates page>. Taken from previous assignment
         (function() {
             //variables
-            var strN = "A3P2 Patrick's Vampire hunter accessories, and supplies.",
+            var strN = "A3P4 Patrick's Vampire hunter accessories, and supplies.",
                 strIn = "Welcome to my vampire hunter store, presented below are two critical vampire hunting tools.",
                 prd1D = "This is a perfect weapon for defeating vampires, just position over their heart and jam it in, then poof            no more vampire. <br> (Hammer not included)",
                 prd1P = "$" + prodPrice[0] + " Anti-Vampire Stake(do not eat)",
                 prd2D = "You may wonder what good nail clippers may do against a vampire ,but have you seen the claws on the nosferatu. If threatened by one like Count Orlok just flash your clippers and the fear the vampire will have of having his fabolous nails cut will send him flying away.",
                 prd2P = "$" + prodPrice[1] + " nail-clipper",
-                title = "A3P2 by Patrick Pelayo",
+                title = "A3P4 by Patrick Pelayo",
                 width = "300",
                 height = "150",
                 temp;
@@ -198,6 +201,8 @@
             document.getElementById("txtQ1").addEventListener("keydown", inpMsk02);
             document.getElementById("txtQ2").addEventListener("keydown", inpMsk02);
             
+            //Process order event
+            document.getElementById("btnProcess").addEventListener("click", processOrder); 
         })();
 
     </script>

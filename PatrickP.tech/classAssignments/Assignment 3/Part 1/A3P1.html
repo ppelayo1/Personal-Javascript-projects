@@ -45,7 +45,7 @@
             </tbody>
         </table>
         <p>
-            <input type="button" value="Process Order" id="btnProcess" onClick="document.getElementById('receipt').innerHTML = document.getElementById('txtName').value;"
+            <input type="button" value="Process Order" id="btnProcess" onClick="document.getElementById('receipt').innerHTML = document.getElementById('txtName').value + ', thank you for your order!';"
         </p>
 
     </form>
@@ -56,7 +56,7 @@
         //This function will change the HTML to the store one<updates page>. Taken from previous assignment
         (function() {
             //variables
-            var strN = "A5P1 Patrick's Vampire hunter accessories, and supplies.",
+            var strN = "A3P1 Patrick's Vampire hunter accessories, and supplies.",
                 strIn = "Welcome to my vampire hunter store, presented below are two critical vampire hunting tools.",
                 prd1D = "This is a perfect weapon for defeating vampires, just position over their heart and jam it in, then poof            no more vampire. <br> (Hammer not included)",
                 prd1P = "$" + prodPrice[0] + " Anti-Vampire Stake(do not eat)",

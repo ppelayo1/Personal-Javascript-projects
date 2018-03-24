@@ -67,4 +67,20 @@ myNameSpace = {
         $h1.prop("contenteditable", flag).toggleClass("editable");
         $p.prop("contenteditable", flag).toggleClass("editable");
     });
+    
+    //Creates an handler to show the nav lists for the assignments
+    $(".assignInfo").click(function() {
+        $(this).next("ul").slideToggle("slow");       
+        
+    });
+    
+    //This highlights the assignments to demonstrate they are clickable
+    $(".assignInfo").mouseover(function() {
+        $(this).addClass("hover");        
+    });
+    
+    //Once the mouse has moved away the highlighting stops
+    $(".assignInfo").mouseleave(function() {
+        $(this).removeClass("hover");           
+    });
 })()
