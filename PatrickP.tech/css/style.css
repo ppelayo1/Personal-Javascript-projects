@@ -34,11 +34,14 @@ h4{
 }
 
 .links{
-    list-style: none;
+    list-style:none;
     margin: 10px 0;
     padding: 0;
 }
 
+.links li{
+	list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+}
 
 
 .assignInfo{    

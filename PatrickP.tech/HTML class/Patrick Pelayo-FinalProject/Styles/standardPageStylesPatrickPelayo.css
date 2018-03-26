@@ -1,0 +1,93 @@
+body{
+    background: grey;
+}
+
+#mainBox{
+    margin: 0 auto;
+    width: 1280px;
+    height:auto;
+    background-image: url(/Images/backgroundGradiant/mainBackground.png);
+    min-height: 1040px;
+}
+
+header{
+    
+    background-image: url(/Images/header/headerBannerFans.jpg);
+    width:1280px;
+    height:180px;
+}
+
+header a{    
+    float:left;
+    padding: 35px 0 0 455px;   
+}
+
+
+nav{
+    
+    min-height: 664px;
+    background-image: url(../Images/navBar/wood4Gimp.jpg);    
+    background-repeat:repeat;  
+    margin:0;
+    padding:0;
+    font-family: Verdana, Geneva, sans-serif;
+    
+    
+}
+
+.navBarLinks{
+    padding:0;
+    margin-left: 3px;
+    width:244px;
+    background-image: url(../Images/navBar/wood5Gimp.jpg);    
+    background-repeat:repeat;
+    
+    
+    
+}
+
+.navBarLinks ul{
+    padding-left: 5px;
+    padding-bottom: 15px;
+}
+
+.navBarLinks li{
+    list-style: none;   
+    padding:0 0 15px 0;
+    
+}
+
+.navBarLinks a{
+    text-decoration-line: none;
+    color:black;
+}
+
+.navBarLinks a:hover{
+    background:silver;
+    text-decoration-line: underline;
+}
+
+#main{
+    width:1030px;   
+    min-height: 664px;
+       
+}
+
+
+.navBarHeader{    
+    margin-top: 4px;     
+    text-align: center;
+    text-decoration: underline;    
+}
+
+footer{
+    margin:0;
+    height:180px;
+    width: 1280px;
+    
+    border-top:black;
+    border-top-style: solid;
+    border-top-width: 8px;
+    clear:both;
+}
+
