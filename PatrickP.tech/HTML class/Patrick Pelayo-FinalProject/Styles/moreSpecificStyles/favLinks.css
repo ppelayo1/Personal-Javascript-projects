@@ -1,0 +1,10 @@
+#main a{
+    text-decoration: none;
+    color:indianred;
+}
+
+#main a:hover{
+    background:silver;
+    text-decoration-line: underline;
+}
+

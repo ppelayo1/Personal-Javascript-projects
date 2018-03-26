@@ -1,0 +1,25 @@
+#welcomeHome{    
+    text-align: center;
+}
+
+#biography,#futureBiography{
+    height:auto; 
+    width:44%;
+    padding-left: 3%;
+    padding-right: 3%;
+    text-align: center;
+    
+}
+#biography{
+    clear:right;   
+    float:left;
+}
+
+#futureBiography{      
+    float:right;
+}
+
+.orderedList li{
+    text-align: left;
+    margin-left: 120px;
+}

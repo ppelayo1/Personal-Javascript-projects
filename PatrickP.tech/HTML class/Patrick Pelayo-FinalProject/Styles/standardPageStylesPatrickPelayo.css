@@ -4,7 +4,7 @@ body{
 
 #mainBox{
     margin: 0 auto;
-    width: 1280px;
+    width: 1250px;
     height:auto;
     background-image: url(/Images/backgroundGradiant/mainBackground.png);
     min-height: 1040px;
@@ -13,13 +13,13 @@ body{
 header{
     
     background-image: url(/Images/header/headerBannerFans.jpg);
-    width:1280px;
+    width:1250px;
     height:180px;
 }
 
 header a{    
     float:left;
-    padding: 35px 0 0 455px;   
+    margin: 35px 0 0 455px;      
 }
 
 
@@ -67,23 +67,29 @@ nav{
     text-decoration-line: underline;
 }
 
-#main{
-    width:1030px;   
-    min-height: 664px;
-       
-}
-
-
 .navBarHeader{    
     margin-top: 4px;     
     text-align: center;
     text-decoration: underline;    
 }
 
+#main{
+    width:1000px;   
+    min-height: 664px;
+           
+}
+
+#main,footer{
+    color:lightgrey;
+}
+
+
+
+
 footer{
     margin:0;
     height:180px;
-    width: 1280px;
+    width: 1250px;
     
     border-top:black;
     border-top-style: solid;
