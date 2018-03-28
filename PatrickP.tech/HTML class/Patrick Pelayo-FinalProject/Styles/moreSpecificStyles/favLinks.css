@@ -8,3 +8,13 @@
     text-decoration-line: underline;
 }
 
+#favMainContent{
+    width: 98%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+
+#favShortCut{
+    margin-left: 350px;
+}

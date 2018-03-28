@@ -1,6 +1,6 @@
-#welcomeHome{    
-    text-align: center;
-}
+
+
+
 
 #biography,#futureBiography{
     height:auto; 
@@ -8,18 +8,33 @@
     padding-left: 3%;
     padding-right: 3%;
     text-align: center;
-    
+    padding-bottom: 30px;
 }
 #biography{
     clear:right;   
-    float:left;
+    float:left;    
+}
+
+.orderedList li{
+    text-align: left;
+    margin-left: 120px;
 }
 
 #futureBiography{      
     float:right;
 }
 
-.orderedList li{
-    text-align: left;
-    margin-left: 120px;
+#snapShot{
+    height:362px;
+}
+
+
+
+.unorderedList li{
+    text-align:left;
+    margin-left: 160px;
+}
+
+#autoHeightFix{
+    clear:both;
 }

@@ -59,14 +59,16 @@
 
         <div id="main">
 
-            <h1 id="welcomeHome">Welcome to my Home Page!</h1>
-        
+            <h1 class="firstHeader">Welcome to my Home Page!</h1>
+
 
             <section id="biography">
 
                 <h2>Who I am now</h2>
                 <article>
                     <h3>General Info</h3>
+
+                    <img class="imageFrame" src="Images/Index/libraryBooks.png" alt="library">
                     <p> I am currently a student at RCC for my last academic semester. Among the things that I love to do includes </p>
 
                     <ol class="orderedList">
@@ -78,17 +80,54 @@
 
                     </ol>
 
+                </article>
 
+                <article>
+
+                    <h3> Current Skills </h3>
+
+                    <p> I have over 15 years of experience with computers. The earliest computer I can recall using to a great deal was a labtop running windows 98. I learned to keep the computer free from virus/adware of which windows was much more vulnrable to exposure then. </p>
+
+                    <p> Eventually the computer did give out, starting with the touch-pad wearing out and then finally the power port no longer accepting a charge from the power cord.</p>
+
+                    <p>Today I have extensive experience with PCs, I know how to maintain and repair the devices as needed. In addition, on the development side I am comfortable with C++,Javascript,HTML,CSS, and other frameworks/languages.</p>
 
                 </article>
             </section>
 
             <section id="futureBiography">
 
+
+
                 <h2>Who I will be</h2>
 
+                <article id="snapShot">
+                    <h3>Future SnapShot</h3>
+                    <img class="imageFrame" src="Images/Index/graduation.jpg" alt="graduation">
+
+                    <p>June 2018 I graduate with an Associate of Science in the Math and Sciences. I will move onto the next stage in my life.</p>
+
+                </article>
+
+                <article>
+
+                    <h3>Future Skills </h3>
+                    <p>I will master more languages,frameworks involving web development.</p>
+                    <ul class="unorderedList">
+                        <li>PHP</li>
+                        <li>XML</li>
+                        <li>Ajax</li>
+                        <li>MySql</li>
+
+                    </ul>
+
+                </article>
 
             </section>
+
+            <!-- The purpose of this div is to clear the floats so that the main auto:height will function correctly-->
+            <div id="autoHeightFix"></div>
+
         </div>
 
 
@@ -99,6 +138,10 @@
 
     </div>
 
+
+    <script src="OneJsScript/autoHeightFix.js" type="text/javascript">
+        //Only contains one script of which has the purpose of auto-sizing the height of the NAV bar of which height:auto will not repeat the background image without a set height
+    </script>
 
 
 

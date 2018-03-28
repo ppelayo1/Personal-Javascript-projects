@@ -1,0 +1,10 @@
+#responseMainContent{
+    width: 98%;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+}
+
+#responseMainContent > p{
+   margin-left: 262px;
+}

@@ -6,12 +6,12 @@
     <title>>Patrick Pelayo Final Project Feedback</title>
     <link href="/Styles/layout.css" type="text/css" rel="stylesheet">
     <link href="/Styles/standardPageStylesPatrickPelayo.css" type="text/css" rel="stylesheet">
+    <link href="Styles/moreSpecificStyles/feedback.css" type="text/css" rel="stylesheet">
     <!-- Add a link to your own style sheet here  -->
 
 
     <!--
-	Final Project by __________________________ (your name)
--->
+	Final Project by __________________________ (your name)-->
 
 </head>
 
@@ -54,23 +54,26 @@
         </nav>
 
         <div id="main">
-        <h1>Feedback</h1>
 
-        <p>Your feedback is important to us, please fill out the form below and send us your feedback..</p>
+            <section id="fbMainContent">
 
-        <form action="response.html" method="get">
+                <h1 class="firstHeader">Feedback</h1>
 
-            <fieldset>
+                <p>Your feedback is important to us, please fill out the form below and send us your feedback..</p>
 
-                <legend> Feedback Info</legend>
+                <form id="feedBack" action="response.html" method="get">
 
-                <p> <label for="comments"> Comments </label> <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
-                </p>
+                    <fieldset class="formatForm">
 
-                <p>
+                        <legend> Feedback Info</legend>
 
-                    <label for="feedBackList">Your feedback is regarding:</label>
-                    <select id="feedBackList" name="feedBackList">
+                        <p> <label for="comments"> Comments </label> <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
+                        </p>
+
+                        <p>
+
+                            <label for="feedBackList">Your feedback is regarding:</label>
+                            <select id="feedBackList" name="feedBackList">
                     
                         <option value="noCoice" selected>
                             Choose One! 
@@ -97,42 +100,44 @@
                         </option>
                         
                     </select>
-                </p>
-            </fieldset>
+                        </p>
+                    </fieldset>
 
-            <fieldset>
+                    <fieldset class="formatForm">
 
-                <legend>Contact Info</legend>
-                <p>
+                        <legend>Contact Info</legend>
+                        <p>
 
-                    <label for="userName">Name:</label>
-                    <input type="text" name="userName" id="userName">
+                            <label for="userName">Name:</label>
+                            <input type="text" name="userName" id="userName">
 
-                </p>
+                        </p>
 
-                <p>
+                        <p>
 
-                    How can we contact you? (check all that apply)<br>
-                    <input id="byPhone" type="checkBox" name="byPhone" value="byPhone"> <label for="byPhone"> Call?   </label>
-                    <input id="byText" type="checkBox" name="byText" value="byText"> <label for="byText"> Text?   </label>
-                    <input id="byEmail" type="checkBox" name="byEmail" value="byEmail"> <label for="byEmail"> Email?</label>
-
-
-                </p>
-
-                <p>
-                    <label for="phoneN">Phone: </label> <input id="phoneN" type="tel" name="phoneN">
-                </p>
-
-                <p>
-                    <label for="emailAd"> Email: </label> <input id="emailAd" type="email" name="emailAd">
-                </p>
-            </fieldset>
-
-            <input type="submit" value="Send Feedback">
+                            How can we contact you? (check all that apply)<br>
+                            <input id="byPhone" type="checkBox" name="byPhone" value="byPhone"> <label for="byPhone"> Call?   </label>
+                            <input id="byText" type="checkBox" name="byText" value="byText"> <label for="byText"> Text?   </label>
+                            <input id="byEmail" type="checkBox" name="byEmail" value="byEmail"> <label for="byEmail"> Email?</label>
 
 
-        </form>
+                        </p>
+
+                        <p>
+                            <label for="phoneN">Phone: </label> <input id="phoneN" type="tel" name="phoneN">
+                        </p>
+
+                        <p>
+                            <label for="emailAd"> Email: </label> <input id="emailAd" type="email" name="emailAd">
+                        </p>
+                    </fieldset>
+
+                    <input type="submit" value="Send Feedback">
+
+
+                </form>
+
+            </section>
         </div>
 
 
@@ -144,6 +149,10 @@
     </div>
 
     
+    <script src="OneJsScript/autoHeightFix.js" type="text/javascript">
+        //Only contains one script of which has the purpose of auto-sizing the height of the NAV bar of which height:auto will not repeat the background image without a set height
+    </script>
+
 </body>
 
 </html>

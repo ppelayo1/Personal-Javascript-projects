@@ -76,15 +76,29 @@ nav{
 #main{
     width:1000px;   
     min-height: 664px;
-           
+    height:auto;   
+    padding-top:  0.67em    
+}
+
+.imageFrame{
+    width: 350px;
+    height:150px;
+    padding: 10px;
+    border: #4A1814;
+    border-style: solid;
+    border-radius: 6px;
+    border-width: 1px;
+    background:#4A1814;
 }
 
 #main,footer{
     color:lightgrey;
 }
 
-
-
+.firstHeader{    
+    text-align: center;    
+    margin-top: 0px;
+}
 
 footer{
     margin:0;
