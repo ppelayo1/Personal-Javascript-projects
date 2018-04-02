@@ -23,9 +23,8 @@
 }
 
 .formatForm > legend {
-    position:relative;
-    bottom: 10px;
-    right: 13px;
+    
+    background:#543232;
     color:lightgrey;
    
 }

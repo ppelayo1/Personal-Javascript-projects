@@ -6,13 +6,13 @@ body{
     margin: 0 auto;
     width: 1250px;
     height:auto;
-    background-image: url(/Images/backgroundGradiant/mainBackground.png);
+    background-image: url(../Images/backgroundGradiant/mainBackground.png);
     min-height: 1040px;
 }
 
 header{
     
-    background-image: url(/Images/header/headerBannerFans.jpg);
+    background-image: url(../Images/header/headerBannerFans.jpg);
     width:1250px;
     height:180px;
 }

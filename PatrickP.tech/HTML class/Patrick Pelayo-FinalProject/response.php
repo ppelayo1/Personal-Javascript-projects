@@ -4,11 +4,13 @@
 <head>
     <meta charset="utf-8">
     <title>>Patrick Pelayo Final Project Thank You!</title>
-    <link href="/Styles/layout.css" type="text/css" rel="stylesheet">
-    <link href="/Styles/standardPageStylesPatrickPelayo.css" type="text/css" rel="stylesheet">
-    <link href="/Styles/moreSpecificStyles/response.css" type="text/css" rel="stylesheet">
+    <link href="Styles/layout.css" type="text/css" rel="stylesheet">
+    <link href="Styles/standardPageStylesPatrickPelayo.css" type="text/css" rel="stylesheet">
+    <link href="Styles/moreSpecificStyles/response.css" type="text/css" rel="stylesheet">
     <!-- Add a link to your own style sheet here  -->
 
+    <?php require "PHP/objects.php"?>
+    
 
     <!--
 	Final Project by __________________________ (your name)-->
@@ -55,9 +57,16 @@
         <div id="main">
             <section id="responseMainContent">
 
-                <h1 class="firstHeader">Thank You!</h1>
+                <?php $object->outPutMessage(); ?>
+                
+                <!--
+                <h1 class="firstHeader">Thank You  ?>!</h1>
                 <p>Your feedback means a great deal to me. It helps me perfect this site <br> <strong style="padding: 0 0 0 200px;"> FOR YOU!</strong>
                 </p>
+                
+                <p></p>
+
+                -->
 
             </section>
 
